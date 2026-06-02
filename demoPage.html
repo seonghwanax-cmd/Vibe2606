@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #ffffff;
+            color: #1b1f3b;
+            border: none;
+            border-radius: 999px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+        }
+
+        .output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML5 + CSS3 + JavaScript Demo</h1>
+        <p>버튼을 누르면 현재 날짜와 시간이 표시됩니다. 간단한 인터랙션을 통해 프론트엔드 동작을 확인해보세요.</p>
+        <button id="actionButton">지금 확인하기</button>
+        <div class="output" id="outputText">여기에 결과가 표시됩니다.</div>
+    </div>
+
+    <script>
+        const button = document.getElementById('actionButton');
+        const output = document.getElementById('outputText');
+
+        button.addEventListener('click', () => {
+            const now = new Date();
+            output.textContent = `현재 시간: ${now.toLocaleString('ko-KR')}`;
+            button.textContent = '다시 확인';
+        });
+    </script>
+</body>
+</html>
